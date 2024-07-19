@@ -22,7 +22,7 @@ export const CustomNoRowsOverlay = (props: { noRowsMessageFunc?: () => string })
       <Stack gap={8} align="center">
         <QIcon name="icNoData" size={32} fill="var(--mantine-color-gray-6)" />
         <Text fz={14} c="gray.6">
-          {props?.noRowsMessageFunc?.() || 'Không có dữ liệu'}
+          {props?.noRowsMessageFunc?.() || 'No data available'}
         </Text>
       </Stack>
     </div>
@@ -65,8 +65,6 @@ const VcSSRMTable = <TData,>(props: VcTableProps<TData>, ref: ForwardedRef<TVcTa
     >
       <AgGridReact<TData>
         ref={gridRef}
-        serverSideSortOnServer
-        enableCellChangeFlash
         animateRows
         rowSelection="single"
         rowModelType="serverSide"
@@ -75,12 +73,11 @@ const VcSSRMTable = <TData,>(props: VcTableProps<TData>, ref: ForwardedRef<TVcTa
         cacheBlockSize={20}
         headerHeight={32}
         rowHeight={32}
-        cellFadeDelay={1000}
         getContextMenuItems={params => []}
         components={{
           noRowsOverlay: CustomNoRowsOverlay
         }}
-        defaultColDef={{ suppressMenu: true }}
+        defaultColDef={{ suppressHeaderMenuButton: true }}
         onGridReady={onGridReady}
         onGridSizeChanged={e => {
           e.api.sizeColumnsToFit();
@@ -129,9 +126,9 @@ export const TableHeader: React.FC<TTableHeaderProps> = props => {
         </UnstyledButton>
 
         {props.isCreatable && props.onNewClick && (
-          <Button h={32} onClick={props.onNewClick}>
-            + Thêm mới
-          </Button>
+          <UnstyledButton h={32} onClick={props.onNewClick}>
+            + Add
+          </UnstyledButton>
         )}
       </Group>
     </Group>
