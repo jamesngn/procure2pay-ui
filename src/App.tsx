@@ -1,3 +1,4 @@
+import { LicenseManager } from 'ag-grid-enterprise';
 import React, { Suspense } from 'react';
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
@@ -8,6 +9,9 @@ import Login from './pages/login.page';
 import RequisitionPage from './pages/requisition.page';
 import { ProtectedRoute } from './shared/components/hoc/ProtectedRoute';
 import Auth from './shared/services/auth';
+
+const AG_GRID_KEY = import.meta.env.VITE_AG_GRID_KEY;
+LicenseManager.setLicenseKey(AG_GRID_KEY);
 
 export enum ROUTES {
   Home = '/',
