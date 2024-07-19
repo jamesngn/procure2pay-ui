@@ -1,0 +1,92 @@
+// Import ag-Grid styles and the ag-theme-alpine CSS
+@import 'ag-grid-enterprise/styles/ag-grid.css';
+@import 'ag-grid-enterprise/styles/ag-theme-alpine.min.css';
+
+.ag-theme-alpine {
+  --ag-font-family: Manrope;
+  --ag-icon-size: 12px;
+  --ag-filter-icon-size: 15px;
+  --ag-odd-row-background-color: var(--mantine-color-gray-1);
+  --ag-alpine-active-color: var(--mantine-color-green-5);
+  --ag-selected-row-background-color: var(--mantine-color-green-1);
+
+  --ag-row-hover-color: var(--mantine-color-green-0);
+  --ag-foreground-color: var(--mantine-color-black);
+
+  --ag-range-selection-border-color: transparent;
+
+  // header
+  --ag-header-foreground-color: var(--mantine-color-gray-6);
+  --ag-header-background-color: var(--mantine-color-white);
+
+  --ag-control-panel-background-color: var(--mantine-color-gray-6);
+
+  // cell
+  --ag-input-focus-border-color: var(--mantine-color-green-5);
+  --ag-input-focus-box-shadow: 1px var(--mantine-color-green-5);
+
+  // tab
+  --ag-tab-background-color: var(--mantine-color-gray-4);
+
+  // menu
+  --ag-menu-background-color: var(--mantine-color-gray-5);
+
+  .ag-header {
+    border-bottom: 2px solid var(--mantine-color-black);
+  }
+
+  .ag-header-cell {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .ag-root-wrapper {
+    border: none;
+    border-bottom: 2px solid var(--mantine-color-gray-1);
+  }
+
+  .ag-menu {
+    .ag-menu-option {
+      cursor: pointer;
+    }
+
+    .ag-menu-option-active {
+      transition: background-color 0.2s ease;
+      background-color: var(--ag-menu-background-color);
+    }
+
+    .ag-menu-option-text {
+      color: var(--mantine-color-white);
+    }
+  }
+
+  .ag-tabs {
+    .ag-tabs-header {
+      background-color: var(--ag-tab-background-color);
+    }
+    .ag-tabs-body {
+      background-color: var(--ag-tab-background-color);
+    }
+  }
+
+  .ag-floating-filter-button {
+    margin-left: calc(var(--ag-grid-size) * 1.5);
+
+    .ag-button.ag-floating-filter-button-button {
+      cursor: pointer;
+      width: var(--ag-filter-icon-size);
+      height: var(--ag-filter-icon-size);
+    }
+
+    .ag-icon.ag-icon-filter {
+      font-size: var(--ag-filter-icon-size);
+    }
+  }
+
+  .ag-set-filter {
+    .ag-set-filter-list {
+      height: calc(var(--ag-list-item-height) * 5);
+    }
+  }
+}

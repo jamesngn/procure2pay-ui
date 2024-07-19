@@ -10,7 +10,7 @@ export const theme = createTheme({
   colors,
   primaryShade: 5,
   primaryColor: 'darkBlue',
-  white: '#E7F5FF',
+  white: 'var(--color-white)',
   cursorType: 'pointer',
   black: '#1e1e1e',
   fontSmoothing: true,
