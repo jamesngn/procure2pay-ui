@@ -41,7 +41,6 @@ export const AuthContextProvider: React.FC<{ children: React.ReactNode }> = ({ c
       if (token) {
         try {
           const res = await userService.getUserProfile();
-          console.log(res);
           if (res.successful && res.data) {
             setUser(res.data as UserState);
           }
