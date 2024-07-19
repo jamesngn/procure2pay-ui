@@ -1,10 +1,11 @@
-import axios, { AxiosResponse } from 'axios';
+import { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 
-import { ILoginRequest, ILoginResponse } from './dto';
 import { IDTOServiceResponse } from '@/shared/models';
-import { END_POINT } from './end-point';
+
+import { END_POINT } from '../../../constants/end-point';
 import { BaseService } from '../base-service';
+import { ILoginRequest, ILoginResponse } from './dto';
 
 const { VITE_API_HOST_ENVIRONMENT } = import.meta.env;
 

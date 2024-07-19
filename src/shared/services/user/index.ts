@@ -1,6 +1,6 @@
 import { IDTOServiceResponse } from '@/shared/models';
 
-import { END_POINT } from '../auth/end-point';
+import { END_POINT } from '../../../constants/end-point';
 import { BaseService } from '../base-service';
 import { IUserProfileResponse } from './dto';
 
