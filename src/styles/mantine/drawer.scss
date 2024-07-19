@@ -1,0 +1,11 @@
+.mantine-Drawer-header {
+  height: 60px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  background-color: var(--mantine-color-gray-0);
+}
+
+.mantine-Drawer-body {
+  height: calc(100vh - 60px);
+}
