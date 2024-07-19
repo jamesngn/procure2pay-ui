@@ -190,7 +190,7 @@ const LayoutFooter: React.FC = () => {
       bg={'var(--mantine-primary-color-9)'}
       withBorder={false}
       px={16}
-      zIndex={1}
+      zIndex={1000}
     />
   );
 };
