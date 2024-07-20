@@ -126,7 +126,24 @@ export const TableHeader: React.FC<TTableHeaderProps> = props => {
         </UnstyledButton>
 
         {props.isCreatable && props.onNewClick && (
-          <UnstyledButton h={32} onClick={props.onNewClick}>
+          <UnstyledButton
+            style={{
+              backgroundColor: 'var(--mantine-primary-color-5)',
+              color: 'white',
+              borderRadius: '4px',
+              height: '32px',
+              padding: '0 12px',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              border: 'none',
+              '&:hover': {
+                backgroundColor: 'var(--mantine-primary-color-1)'
+              }
+            }}
+            onClick={props.onNewClick}
+          >
             + Add
           </UnstyledButton>
         )}

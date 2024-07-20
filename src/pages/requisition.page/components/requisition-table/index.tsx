@@ -17,7 +17,6 @@ const RequisitionTable = () => {
     navigate('/requisition/create');
   };
 
-
   // Callback function when data is successfully loaded
   const onLoadDataSuccess = ({ api }: IServerSideGetRowsParams) => {
     api.hideOverlay();
@@ -25,7 +24,6 @@ const RequisitionTable = () => {
   };
 
   const serverSideDatasource = useMemo(() => {
-    
     const getRows = async (params: IServerSideGetRowsParams) => {
       const { rowCount, rowData } = await RequisitionDataSource(params.request);
       if (!rowCount) {
@@ -40,7 +38,6 @@ const RequisitionTable = () => {
       if (rowCount > 0) {
         onLoadDataSuccess(params);
       }
-
     };
 
     return { getRows };
@@ -56,17 +53,16 @@ const RequisitionTable = () => {
 
   return (
     <Stack gap={16} h={'100%'}>
-      <TableHeader title="Requisition Table" isCreatable={true} onNewClick={onNewClick}  />
+      <TableHeader title="Requisition Table" isCreatable={true} onNewClick={onNewClick} />
 
       <QSSRMTable<TRequisition>
-       masterDetail={true}
-       columnDefs={columnDefs}
-       serverSideDatasource={serverSideDatasource}
-       noRowsOverlayComponentParams={noRowsOverlayComponentParams}
-       getRowId={data => {
-        return data.data.createdOn;
-       }}
-      
+        masterDetail={true}
+        columnDefs={columnDefs}
+        serverSideDatasource={serverSideDatasource}
+        noRowsOverlayComponentParams={noRowsOverlayComponentParams}
+        getRowId={data => {
+          return data.data.createdOn;
+        }}
       />
     </Stack>
   );

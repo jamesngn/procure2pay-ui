@@ -11,6 +11,7 @@ import { ProtectedRoute } from './shared/components/hoc/ProtectedRoute';
 import Auth from './shared/services/auth';
 
 const AG_GRID_KEY = import.meta.env.VITE_AG_GRID_KEY;
+
 LicenseManager.setLicenseKey(AG_GRID_KEY);
 
 export enum ROUTES {

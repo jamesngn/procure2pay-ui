@@ -1,6 +1,5 @@
 import {
   AppShell,
-  Avatar,
   Box,
   Group,
   Menu,
@@ -14,19 +13,18 @@ import {
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
-  IconChevronRight,
   IconGauge,
   IconLogout,
   IconPackage,
   IconSettings2,
   IconShoppingCartDollar
 } from '@tabler/icons-react';
-import React, { ReactElement } from 'react';
+import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { QIcon } from '@/components/icon';
-import { useAuthContext } from '@/contexts/AuthContext';
 import UserButton from '@/components/user-button';
+import { useAuthContext } from '@/contexts/AuthContext';
 
 type SidebarLinkProps = {
   iconName: any;
@@ -220,8 +218,3 @@ export const AppLayout: React.FC<LayoutProps> = props => {
     </AppShell>
   );
 };
-function forwardRef<T, U>(
-  arg0: ({ image, name, email, icon, ...others }: UserButtonProps, ref: any) => React.JSX.Element
-) {
-  throw new Error('Function not implemented.');
-}

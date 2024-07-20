@@ -7,8 +7,6 @@ import { END_POINT } from '../../../constants/end-point';
 import { BaseService } from '../base-service';
 import { ILoginRequest, ILoginResponse } from './dto';
 
-const { VITE_API_HOST_ENVIRONMENT } = import.meta.env;
-
 class AuthService extends BaseService {
   constructor() {
     super(END_POINT.AUTH.BASE_URL);
