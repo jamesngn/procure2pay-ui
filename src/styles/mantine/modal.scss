@@ -1,0 +1,26 @@
+.mantine-Modal-header {
+  height: 90px;
+  color: var(--mantine-color-white);
+  background-color: var(--mantine-primary-color-9);
+}
+
+.mantine-Modal-content {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: calc(100% - 30px * 2);
+  height: calc(100%);
+}
+
+.mantine-Modal-body {
+  padding: 30px 20px;
+}
+
+.mantine-Modal-close {
+  color: var(--mantine-color-white);
+}
+
+.mantine-Modal-close:hover {
+  color: var(--mantine-primary-color-9);
+  background-color: var(--mantine-color-white);
+}

@@ -1,7 +1,6 @@
 import { RequisitionStatus } from '@/shared/enums';
 
 import { TPagingRequest } from './common';
-import { TRequisitionItem } from './requisitionItem';
 import { TUser } from './user';
 
 export type TRequisition = {
@@ -9,6 +8,15 @@ export type TRequisition = {
   createdOn: string;
   state: RequisitionStatus;
   items: TRequisitionItem[];
+};
+
+export type TRequisitionItem = {
+  requisitionItemId: number;
+  requisitionId: number;
+  supplierName: string;
+  quantity: number;
+  unitCost: number;
+  totalCost: number;
 };
 
 export type TRequisitionSearch = TPagingRequest & {
@@ -19,4 +27,18 @@ export type TRequisitionSearch = TPagingRequest & {
   toDate?: string;
   minTotalCost?: number;
   maxTotalCost?: number;
+};
+
+export type TRequisitionCreateRequest = {
+  supplierId: string;
+};
+
+export type TRequisitionCreateResponse = {
+  requisitionId: string;
+  supplierName: string;
+  userFirstName: string;
+  userLastName: string;
+  createdOn: string;
+  totalCost: number;
+  code: string;
 };

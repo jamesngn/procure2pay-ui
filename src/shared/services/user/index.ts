@@ -15,8 +15,6 @@ class UserService extends BaseService {
         null
       );
 
-      console.log(res);
-
       return {
         successful: res.successful,
         data: res.data

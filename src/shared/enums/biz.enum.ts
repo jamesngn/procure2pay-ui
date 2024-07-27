@@ -19,3 +19,9 @@ export const requisitionStatusData = {
   [RequisitionStatus.EXPIRED]: { label: 'Expired', color: 'var(--mantine-color-red-6)' },
   [RequisitionStatus.CLOSED]: { label: 'Closed', color: 'var(--mantine-color-blue-6)' }
 };
+
+export enum SupplierItemState {
+  'UNKNOWN' = 0,
+  'IN_STOCK' = 1,
+  'OUT_OF_STOCK' = 2
+}

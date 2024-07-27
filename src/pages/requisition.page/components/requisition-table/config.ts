@@ -1,18 +1,17 @@
-import { IServerSideGetRowsRequest } from "ag-grid-community";
+import { IServerSideGetRowsRequest } from 'ag-grid-community';
 
-import { getRequisitionListQuery } from "@/api/requisition";
-import { getPagingRequest } from "@/shared/utils";
-import { TAgGridDatasourceResponse } from "@/types";
+import { getRequisitionListQuery } from '@/api/requisition';
+import { getPagingRequest } from '@/shared/utils';
+import { TAgGridDatasourceResponse } from '@/types';
 
-export const RequisitionDataSource: (request: IServerSideGetRowsRequest) => Promise<TAgGridDatasourceResponse> =
-    async (request) => {
-        const { pageSize, pageNumber } = getPagingRequest(request);
-        const data = await getRequisitionListQuery.fn({ pageSize, pageNumber });
+export const RequisitionDataSource: (
+  request: IServerSideGetRowsRequest
+) => Promise<TAgGridDatasourceResponse> = async request => {
+  const { pageSize, pageNumber } = getPagingRequest(request);
+  const data = await getRequisitionListQuery.fn({ pageSize, pageNumber });
 
-        console.log(data);
-
-        return {
-            rowCount: data?.totalElements || 0,
-            rowData: data?.elements || []
-        };
-    };
+  return {
+    rowCount: data?.totalElements || 0,
+    rowData: data?.elements || []
+  };
+};

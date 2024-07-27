@@ -1,9 +1,10 @@
-import { Button, Center, Group, Stack, Text, UnstyledButton } from '@mantine/core';
+import { Center, Group, Stack, Text, UnstyledButton } from '@mantine/core';
 import { GridApi, GridReadyEvent, IServerSideGetRowsParams } from 'ag-grid-community';
 import { AgGridReact, AgGridReactProps } from 'ag-grid-react';
 import cx from 'classnames';
 import React, { ForwardedRef, forwardRef, useMemo, useRef } from 'react';
 
+import VcButton from '../button';
 import { QIcon } from '../icon';
 
 export type VcTableProps<TData> = AgGridReactProps<TData> & {
@@ -119,33 +120,22 @@ export const TableHeader: React.FC<TTableHeaderProps> = props => {
             p={4}
             w={32}
             h={32}
-            style={{ borderRadius: '4px', border: '1px solid var(--mantine-color-gray-2)' }}
+            style={{
+              borderRadius: '4px',
+              border: '1px solid var(--mantine-color-gray-3)',
+              backgroundColor: 'var(--mantine-color-gray-1'
+            }}
           >
-            <QIcon name="icSearch" size={16} />
+            <QIcon name="icSearch" size={16} fill="var(--mantine-primary-color-6)" />
           </Center>
         </UnstyledButton>
 
         {props.isCreatable && props.onNewClick && (
-          <UnstyledButton
-            style={{
-              backgroundColor: 'var(--mantine-primary-color-5)',
-              color: 'white',
-              borderRadius: '4px',
-              height: '32px',
-              padding: '0 12px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              border: 'none',
-              '&:hover': {
-                backgroundColor: 'var(--mantine-primary-color-1)'
-              }
-            }}
-            onClick={props.onNewClick}
-          >
-            + Add
-          </UnstyledButton>
+          <VcButton color="blue" onClick={props.onNewClick} height={32}>
+            <Text size="sm" tt="uppercase">
+              + Add
+            </Text>
+          </VcButton>
         )}
       </Group>
     </Group>

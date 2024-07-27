@@ -26,7 +26,6 @@ export class BaseService {
     this.service.interceptors.request.use(
       config => {
         config.headers = { ...(config.headers ?? {}) } as AxiosHeaders;
-        console.log(Auth.token);
         if (Auth.token && !config.headers['isIgnoreAuth']) {
           config.headers['Authorization'] = `Bearer ${Auth.token}`;
         } else {

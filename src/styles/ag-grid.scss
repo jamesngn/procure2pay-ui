@@ -7,10 +7,10 @@
   --ag-icon-size: 12px;
   --ag-filter-icon-size: 15px;
   --ag-odd-row-background-color: var(--mantine-color-gray-1);
-  --ag-alpine-active-color: var(--mantine-color-green-5);
-  --ag-selected-row-background-color: var(--mantine-color-green-1);
+  --ag-alpine-active-color: var(--mantine-primary-color-5);
+  --ag-selected-row-background-color: var(--mantine-primary-color-1);
 
-  --ag-row-hover-color: var(--mantine-color-green-0);
+  --ag-row-hover-color: var(--mantine-primary-color-0);
   --ag-foreground-color: var(--mantine-color-black);
 
   --ag-range-selection-border-color: transparent;
@@ -22,8 +22,8 @@
   --ag-control-panel-background-color: var(--mantine-color-gray-6);
 
   // cell
-  --ag-input-focus-border-color: var(--mantine-color-green-5);
-  --ag-input-focus-box-shadow: 1px var(--mantine-color-green-5);
+  --ag-input-focus-border-color: var(--mantine-primary-color-5);
+  --ag-input-focus-box-shadow: 1px var(--mantine-primary-color-5);
 
   // tab
   --ag-tab-background-color: var(--mantine-color-gray-4);
